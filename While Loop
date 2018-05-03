@@ -1,0 +1,26 @@
+<script>
+var play = 'y';
+var score = 1;
+while (play.toLowerCase() == 'y'){
+
+	document.write("<p>Did you win?<\p>") 
+    
+    if (Math.floor(Math.random()*3) == 0){ // tests random number from 0-3
+    	document.write("<p>.......No<\p>"); // only Lose 1/4 of the time
+        score = 0;
+        document.write("<p>Your Score is 0. U SUCK</p>");
+        }
+    else { 
+    	document.write("<p>.......Yes<\p>") //win 3/4 of the time
+   
+       score = 2 * score 
+       document.write(score)
+       
+        }
+    play = prompt("Do you want to play again? [y/n] "); //asks user
+   if (score === 0) {
+   play = "n";
+   }
+}
+</script>
+
