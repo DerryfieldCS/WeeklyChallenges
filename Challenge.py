@@ -1,4 +1,7 @@
-import sys
+import sys, os, random
+
+random.seed()
+
 def coinconverter(num, coinlist):
     counter = 0
     coin_counter = [0] * len(coinlist)
@@ -22,14 +25,56 @@ def coinconverter(num, coinlist):
 def stringcomb(string):
     length = len(string)
     temp_string = string
+    flags = [0]*len(string)
+    #i is number of letters of the current combination
+    i = 0
+    while i < len(string):
+        pass
 
-if args[1] == '-sc':
-    string = input('Please input a string: ')
-    print (stringcomb(string))
+def whilechallenge():
+    os.system('clear')
+    flag = True
+    counter = 1
+    usr_input = 'N'
+    while flag:
+        usr_input = input('Do you want to risk to double your score? [Y/N] ')
+        usr_input.upper()
+        print(flag)
+
+
+        if usr_input == 'Y' or usr_input == 'y':
+            rand = random.randrange(100)
+            if counter == 0:
+                if rand <= 75:
+                    counter = 1
+                    print ('Congrats! Double points!')
+                else:
+                    print ('Congrats! You lost!')
+                    flag = False
+            elif counter != 0:
+                if rand <= 75:
+                    counter = counter * 2
+                    print ('Congrats! Double points!')
+                else:
+                    print ('Congrats! You lost!')
+                    counter = 0
+        elif usr_input == 'N' or usr_input == 'n':
+            flag = False
+        else:
+            print ('Wrong input. Try again.')
+
+        print('Your current score is: ', counter)
+
+
+
 
 #Main structure to pull up other functions
+args = sys.argv
+if args[1] == '-while':
+    whilechallenge()
+    print ('Game Over')
+
 try:
-    args = sys.argv
     if args[1] == '-h':
         print ('Help')
         print ('*********************')
@@ -45,8 +90,7 @@ try:
         for i in range(len(possible_coins)):
             print (possible_coins[i], '\t', coins[i])
 
-
 except:
-	print ('Get some help')
+	print ('-h to get some help')
 
 sys.exit()
