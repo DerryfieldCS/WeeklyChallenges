@@ -1,0 +1,20 @@
+var a = ["ok","fine","but","lost","but","a","a", "words", "words"];
+
+function distinct(arr) {
+    var result = "";
+    for (var i = 0; i < arr.length; i++) {
+      for (var t = 0; t < arr.length; t++) {
+          if (arr[i] === arr[t] && i !== t) {
+          
+          arr.splice(t,1);
+          result += arr[i]+ ","; 
+             
+          }
+          
+      } 
+    } return "repeated words: " + result;
+    
+
+}
+
+distinct(a);
