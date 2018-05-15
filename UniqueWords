@@ -1,0 +1,18 @@
+<script>
+var words = [];
+var unique = true;
+while (unique){
+
+	var currWord = prompt("Type in a fun word! ");
+    words.push(currWord);
+    for(var i = 0; i < words.length; i++){
+    	if (currWord == words[i]){
+    		document.write(words.length)
+       		unique = false;
+            words.pop()
+        }
+    }
+    
+}
+document.write(words)
+</script>
