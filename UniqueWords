@@ -1,15 +1,15 @@
-<script>
-var words = [];
+<script> 
+var words = []; 
 var unique = true;
 while (unique){
 
-	var currWord = prompt("Type in a fun word! ");
-    words.push(currWord);
-    for(var i = 0; i < words.length; i++){
+	var currWord = prompt("Type in a fun word! "); 
+    words.push(currWord); //adds word to the end of the array
+    for(var i = 0; i < words.length -1; i++){ //goes through all the words excet the last one
     	if (currWord == words[i]){
-    		document.write(words.length)
        		unique = false;
             words.pop()
+            document.write(words.length)
         }
     }
     
