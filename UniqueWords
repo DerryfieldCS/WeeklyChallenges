@@ -5,14 +5,14 @@ while (unique){
 
 	var currWord = prompt("Type in a fun word! "); 
     words.push(currWord); //adds word to the end of the array
-    for(var i = 0; i < words.length -1; i++){ //goes through all the words excet the last one
-    	if (currWord == words[i]){
+    for(var i = 0; i < words.length -1; i++){ //goes through all the words except the last one
+    	if (currWord == words[i]){ //if the current word is in the words list then it is now false and it takes your word out of the list
        		unique = false;
-            words.pop()
-            document.write(words.length)
+            	words.pop()
+            	document.write(words.length)//then it display the length of your list
         }
     }
     
 }
-document.write(words)
+document.write(words)//shows all the words you have written
 </script>
